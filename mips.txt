@@ -1,0 +1,142 @@
+    .data
+newline: .asciiz "\n"
+msg5:	.asciiz "_begini ="
+msg12:	.asciiz "Let's have fun.\n"
+msg16:	.asciiz "My stunum is :\n"
+msg17:	.asciiz "18060000\n"
+msg19:	.asciiz "a is :"
+msg20:	.asciiz "Congratulations\n"
+    .text
+main:
+	li $s0, 0
+	li $s1, +18
+	li $s2, -6
+	li $v0, 4
+	la $a0, msg5
+	syscall
+	move $t2, $s0
+	move $t1, $t2
+	move $t0, $t1
+	li $v0, 1
+	move $a0, $t0
+	syscall
+	li $v0, 4
+	la $a0, newline
+	syscall
+	li $v0, 5
+	syscall
+	move $s5, $v0
+	move $t2, $s5
+	move $t1, $t2
+	move $t0, $t1
+	move $s4, $t0
+	move $t2, $s4
+	move $t1, $t2
+	move $t0, $t1
+	li $v0, 1
+	move $a0, $t0
+	syscall
+	li $v0, 4
+	la $a0, newline
+	syscall
+	move $t2, $s2
+	move $t1, $t2
+	move $t0, $t1
+	move $s4, $t0
+	move $t2, $s4
+	move $t1, $t2
+	move $t0, $t1
+	li $v0, 1
+	move $a0, $t0
+	syscall
+	li $v0, 4
+	la $a0, newline
+	syscall
+	move $t2, $s4
+	move $t1, $t2
+	move $t0, $t1
+	move $t2, $s1
+	move $t1, $t2
+	add $t0, $t0, $t1
+	move $t2, $s2
+	move $t1, $t2
+	add $t0, $t0, $t1
+	move $s4, $t0
+	move $t2, $s4
+	move $t1, $t2
+	move $t0, $t1
+	li $v0, 1
+	move $a0, $t0
+	syscall
+	li $v0, 4
+	la $a0, newline
+	syscall
+	li $v0, 4
+	la $a0, msg12
+	syscall
+	li $t2, 1
+	move $t1, $t2
+	move $t0, $t1
+	move $s4, $t0
+	move $t2, $s4
+	move $t1, $t2
+	move $t0, $t1
+	li $t2, 1800
+	move $t1, $t2
+	add $t0, $t0, $t1
+	li $t2, 5
+	move $t1, $t2
+	add $t0, $t0, $t1
+	move $t2, $t0
+	move $t1, $t2
+	li $t2, 1000
+	mult $t1, $t2
+	mflo $t1
+	move $t0, $t1
+	move $s4, $t0
+	move $t2, $s4
+	move $t1, $t2
+	move $t0, $t1
+	li $v0, 1
+	move $a0, $t0
+	syscall
+	li $v0, 4
+	la $a0, newline
+	syscall
+	li $v0, 4
+	la $a0, msg16
+	syscall
+	li $v0, 4
+	la $a0, msg17
+	syscall
+	move $t2, $s0
+	move $t1, $t2
+	move $t0, $t1
+	move $t2, $s1
+	move $t1, $t2
+	add $t0, $t0, $t1
+	move $t2, $t0
+	move $t1, $t2
+	move $t2, $s2
+	mult $t1, $t2
+	mflo $t1
+	li $t2, 2
+	div $t1, $t2
+	mflo $t1
+	move $t0, $t1
+	move $s4, $t0
+	li $v0, 4
+	la $a0, msg19
+	syscall
+	move $t2, $s4
+	move $t1, $t2
+	move $t0, $t1
+	li $v0, 1
+	move $a0, $t0
+	syscall
+	li $v0, 4
+	la $a0, newline
+	syscall
+	li $v0, 4
+	la $a0, msg20
+	syscall

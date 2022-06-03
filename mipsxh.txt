@@ -1,0 +1,50 @@
+    .data
+newline: .asciiz "\n"
+myMessage41:	.asciiz "_begini = 0\n"
+myMessage110:	.asciiz "-6\n"
+myMessage137:	.asciiz "6\n"
+myMessage143:	.asciiz "Let's have fun.\n"
+myMessage197:	.asciiz "1806000\n"
+myMessage203:	.asciiz "My stunum is : \n"
+myMessage211:	.asciiz "18060000\n"
+    .text
+main:   li $v0, 4
+        la $a0, myMessage41
+        syscall
+        li $v0, 5
+        syscall
+        add $t1,$zero,$v0
+        li $v0, 1
+        add $a0,$zero, $t1
+        syscall
+        li $v0, 4
+        la $a0, newline
+        syscall
+        li $v0, 5
+        syscall
+        add $t2,$zero,$v0
+        add	$t3,$zero,$t2
+        li $v0, 1
+        add $a0,$zero, $t3
+        syscall
+        li $v0, 4
+        la $a0, newline
+        syscall
+        li $v0, 4
+        la $a0, myMessage110 #-6
+        syscall
+        li $v0, 4
+        la $a0, myMessage137   #a = a + _endi + testfg; printf(a);
+        syscall
+        li $v0, 4
+        la $a0, myMessage143
+        syscall
+        li $v0, 4
+        la $a0, myMessage197
+        syscall
+        li $v0, 4
+        la $a0, myMessage203
+        syscall
+        li $v0, 4
+        la $a0, myMessage211
+        syscall
